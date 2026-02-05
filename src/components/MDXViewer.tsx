@@ -82,7 +82,6 @@ function GitHubStatsSimple() {
   if (loading) return <div>Cargando estadísticas...</div>;
   if (Object.keys(totals).length === 0) return <div>Error al cargar estadísticas</div>;
 
-  const years = Object.keys(totals);
   const currentYear = new Date().getFullYear().toString();
   const currentYearTotal = totals[currentYear] || 0;
 
