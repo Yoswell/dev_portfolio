@@ -139,13 +139,8 @@ html, body {
     .cols-auto_1fr { display: grid; grid-template-columns: auto 1fr; }
 }
 
-/* ------------------------------------ */
-
-.markdown {
-    width: 100%;
-    height: 100%;
-    @apply flex flex-col items-start gap-8;
-
+/* === */
+#root {
     hr { @apply w-full border-br3; }
 
     .hr {
@@ -188,13 +183,12 @@ html, body {
 
     h4 { @apply text-lg; }
 
-    /* Strongs */
+    /* Strongs and ems */
     strong { @apply text-fg0 font-semibold ; }
+    em { @apply text-fg3; }
 
     p { @apply text-fg2; }
 
-    a { @apply text-fg0 font-medium underline underline-offset-4}
-    
     ul { 
         @apply flex flex-col gap-3 list-disc ml-5;
 

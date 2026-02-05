@@ -1,4 +1,3 @@
-import { ThemeIcon } from '@/components/Icons'
 import { Tooltip } from '@/components/Tooltip'
 import { BoxThemeSetting } from '@/constants/constants'
 import { Link } from 'react-router-dom'
@@ -71,7 +70,7 @@ export function Navigation () {
 
                     <button className='h-7 tooltip-content hidden'>
                         <span>
-                            <ThemeIcon customClass='text-fg0 stroke-2 size-4' />
+                            
                         </span>
 
                         <div className='absolute top-12 right-0 bg-bg1 border border-br3 rounded p-2 pr-4'>
