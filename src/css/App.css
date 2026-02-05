@@ -1,0 +1,205 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+/* Colors */
+:root {
+    /* Backgrounds – dark theme */
+    --bg0-color: #080808; 
+    --bg1-color: #0b0b0b; 
+    --bg2-color: #0f0f0f; 
+    --bg3-color: #1e1e1e; 
+    --bg4-color: #2a2a2a; 
+    --bg5-color: #363636; 
+    --bg6-color: #4d4d4d; 
+    --bg7-color: #646464; 
+    --bg8-color: #858585; 
+    --fg0-color: #f0f0f0; 
+    --fg1-color: #dadada; 
+    --fg2-color: #a8a9ac; 
+    --fg3-color: #646464; 
+    --fg4-color: #4d4d4d; 
+    --fg5-color: #363636; 
+    --fg6-color: #2a2a2a; 
+    --fg7-color: #1e1e1e; 
+    --fg8-color: #0a0b0c; 
+    --br0-color: #090909; 
+    --br1-color: #121212; 
+    --br2-color: #1e1e1e; 
+    --br3-color: #2a2a2a; 
+    --br4-color: #363636; 
+    --br5-color: #4d4d4d; 
+    --br6-color: #646464; 
+    --br7-color: #808080; 
+    --br8-color: #9ca3af;
+
+    --fs-size: 13px;
+
+    --max-w-content: 950px;
+    --max-w-nav: 500px;
+}
+
+/* General styles for the app */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg2-color) transparent;
+    font-size: var(--fs-size);
+}
+
+/* HTML and body styles */
+html { background-color: var(--bg0-color); }
+html, body {
+    width: 100%;
+    height: calc(100dvh - 0px);
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+.lines-svg {
+    mask-image: linear-gradient(to left, var(--bg0-color), transparent);
+}
+
+.lines-svg-column {
+    mask-image: linear-gradient(to top, var(--bg0-color), transparent);
+}
+
+/* Root element styles */
+#root {
+    width: 100%;
+    height: 100%;
+
+    .max-w-content { max-width: var(--max-w-content); }
+    .max-w-nav { max-width: var(--max-w-nav); }
+
+    .banner-image {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 300px;
+        z-index: -1;
+        
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url('/banners/about/macos.jpg');
+            background-size: cover;
+            filter: brightness(0.9);
+            opacity: 0.1;
+            mask-image: linear-gradient(to bottom, var(--bg0-color), transparent);
+            z-index: 9;
+        }
+        
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url('/squares.svg');
+            background-size: 72px;
+            z-index: 10;
+        }
+    }
+
+    /* Tolltip */
+    .tooltip-content {
+        position: relative;
+    
+        .tooltip { 
+            visibility: hidden;
+            z-index: 10;
+        }
+    
+        .tooltip.left { left: 0; }
+        .tooltip.center { left: 50%; transform: translateX(-50%); }
+        .tooltip.right { right: 0; }
+        
+        &:hover .tooltip {
+            visibility: visible;
+        }
+    }
+    
+    .code { font-family: "JetBrains Mono", monospace !important; }
+
+    .img-w-40 { width: 40px; }
+    .img-w-30 { width: 30px; }
+
+    .cols-auto_1fr { display: grid; grid-template-columns: auto 1fr; }
+}
+
+/* ------------------------------------ */
+
+.markdown {
+    width: 100%;
+    height: 100%;
+    @apply flex flex-col items-start gap-8;
+
+    hr { @apply w-full border-br3; }
+
+    .hr {
+        position: relative;
+        @apply w-full h-[20px] flex items-center before:border-y before:border-br3 before:bg-[url('/Lines.svg')] before:bg-[length:60px_60px];
+        font-family: "JetBrains Mono", monospace !important;
+    
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
+        }
+
+        span { @apply text-fg3 text-sm; }
+    }
+
+    /* Headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 { @apply text-fg0; }
+
+    h1,
+    h2 { 
+        font-family: "Instrument Serif", sans-serif;
+        @apply w-full text-fg0 font-semibold;
+    }
+
+    h1 { @apply text-5xl; }
+
+    h2 { @apply text-4xl; }
+
+    h3 { @apply text-xl; }
+
+    h4 { @apply text-lg; }
+
+    /* Strongs */
+    strong { @apply text-fg0 font-semibold ; }
+
+    p { @apply text-fg2; }
+
+    a { @apply text-fg0 font-medium underline underline-offset-4}
+    
+    ul { 
+        @apply flex flex-col gap-3 list-disc ml-5;
+
+        li {
+            @apply w-auto text-fg3;
+        }
+    }
+}
