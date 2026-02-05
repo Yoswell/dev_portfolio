@@ -19,7 +19,7 @@ export const App = () => {
                     <div className='grid'>
                         <Routes>
                             <Route path='/' element={<Home />}></Route>
-                            <Route path='/about' element={<MDXViewer filePath='/contents/about/about.mdx' />}></Route>
+                            <Route path='/about' element={<MDXViewer filePath='contents/about/about.mdx' />}></Route>
                         </Routes>
                         <Footer />
                     </div>
