@@ -2,7 +2,6 @@ import '@/css/App.css'
 import '@/css/Tailwind.css'
 
 import { BrowserRouter, Routes, Route, } from 'react-router-dom'
-import { Home } from '@/pages/home/Home'
 import { Footer } from '@/components/Footer'
 import { Navigation } from '@/components/Navigation'
 import { About } from '@/pages/about/About'
@@ -18,7 +17,6 @@ export const App = () => {
                     
                     <div className='max-w-content grid p-20'>
                         <Routes>
-                            <Route path='/' element={<Home />}></Route>
                             <Route path='/about' element={<About />}></Route>
                         </Routes>
                         <Footer />

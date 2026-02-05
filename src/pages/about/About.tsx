@@ -1,7 +1,5 @@
-import { CodeLine } from "@/components/CodeLine"
 import { HashTag } from "@/components/HashTag"
 import { TitleTag } from "@/components/TitleTag"
-import { Tooltip } from "@/components/Tooltip"
 import { useEffect, useState } from "react"
 
 export const About = () => {
@@ -146,103 +144,6 @@ export const About = () => {
                             'Outlook',
                         ]}>
                     </JobCard>
-                </div>
-            </section>
-        )
-    }
-
-    function SkillSection() {
-        const skillsImages = [
-            { path: 'Bash.svg',},
-            { path: 'CS.svg',},
-            { path: 'Discord.svg',},
-            { path: 'Docker.svg',},
-            { path: 'DotNet.svg',},
-            { path: 'Github.svg',},
-            { path: 'GitLab.svg',},
-            { path: 'Git.svg',},
-            { path: 'GoLang.svg',},
-            { path: 'HTML.svg',},
-            { path: 'JavaScript.svg',},
-            { path: 'Java.svg',},
-            { path: 'Kali.svg',},
-            { path: 'LinkedIn.svg',},
-            { path: 'Linux.svg',},
-            { path: 'Powershell.svg',},
-            { path: 'Python.svg',},
-            { path: 'React.svg',},
-            { path: 'TailwindCSS.svg',},
-            { path: 'TypeScript.svg',},
-            { path: 'Windows.svg',},
-        ]
-
-        const skillTexts = skillsImages.map((x) => {
-            return x.path.split('.')[0]
-        })
-
-        return (
-            <section className='grid gap-4 relative'>
-                <h2 className='text-fg0 font-medium text-3xl tracking-tighter font-1'>Domined Technologies</h2>
-                <p className="text-fg2">
-                    To keep pace with the rapid growth in development and cybersecurity, I am now focusing
-                    my expertise on these core technologies:
-                </p>
-
-                <div className='grid grid-cols-[repeat(18,1fr)] gap-2 mt-4'>
-                    {skillsImages.map((item, index) => (
-                        <div key={index} className="tooltip-content relative">
-                            <div>
-                                <img src={item.path} className='rounded-lg' alt=''/>
-                                <Tooltip customClass="top-14 center">{skillTexts[index]}</Tooltip>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-        )
-    }
-
-    function ProjectSections() {
-        return (
-            <section className='grid gap-4'>
-                <h2 className='text-fg0 font-medium text-3xl tracking-tighter font-1'>Projects</h2>
-                <p className="text-fg2">
-                    Over time, I have worked on a variety of projects that allowed me to explore different technologies, improve
-                    my problem-solving skills, and turn ideas into functional, well-designed solutions.
-                </p>
-
-                <header className="mt-4">
-                    <nav className='max-w-[800px] m-auto flex relative'>
-                        <div className='flex items-center gap-2'>
-                            <button className="text-fg0 border-x border-b-2 border-black outline outline-1 outline-br3 rounded-lg p-3 bg-gradient-to-b from-bg0 to-bg2 py-1 px-3">Boofuzz</button>
-                            <button className="text-fg0 border-x border-b-2 border-black outline outline-1 outline-br3 rounded-lg p-3 bg-gradient-to-b from-bg0 to-bg2 py-1 px-3">Helbreach</button>
-                            <button className="text-fg0 border-x border-b-2 border-black outline outline-1 outline-br3 rounded-lg p-3 bg-gradient-to-b from-bg0 to-bg2 py-1 px-3">Gunnar</button>
-                        </div>
-                    </nav>
-                </header>
-
-                <div className='flex  gap-4'>
-                    <article>
-                        <article className="w-full flex flex-col items-start gap-4 border-x border-b-2 border-black outline outline-1 outline-br3 rounded-xl p-5 relative overflow-hidden card-project">
-                            <h3 className='text-fg0 text-3xl font-1 font-medium z-10'>Boofuzz</h3>
-                            <p className="max-w-[70ch] text-fg1">
-                                Boofuzz is a high-performance HTTP web fuzzer written in Go, designed for directory busting, parameter fuzzing, and vulnerability
-                                discovery. It supports multiple wordlists with custom placeholders, advanced filtering options, and provides detailed response
-                                analysis including body and header inspection.
-                            </p>
-
-                            <div>
-                                <span className="flex items-center gap-2 bg-bg1 border border-br2 rounded py-1 px-3">
-                                    <img src="go.svg" className="w-4"></img>
-                                    <span className="text-fg0 text-xs uppercase">Go</span>
-                                </span>
-                            </div>
-
-                            <CodeLine>git clone https://github.com/Yoswell/boofuzz</CodeLine>
-                            
-                            <div className="lines-down-svg w-[300px] h-[200px] absolute top-0 right-0 bg-[url('/Lines.svg')] bg-[length:80px_80px] bg-repeat"></div>
-                        </article>
-                    </article>
                 </div>
             </section>
         )
