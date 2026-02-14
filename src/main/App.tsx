@@ -2,30 +2,27 @@ import '@/css/App.css'
 import '@/css/Tailwind.css'
 
 import { BrowserRouter, Routes, Route, } from 'react-router-dom'
-import { Footer } from '@/components/Footer'
-import { Navigation } from '@/components/Navigation'
-import { About } from '@/pages/about/About'
+import { Footer } from '@/components/main/Footer'
+import { Navigation } from '@/components/nav/Navigation'
+import { HomePage } from '@/pages/Home'
+import { HeroSection } from '@/components/main/HeroSection'
+import { GridLines } from '@/components/main/GridLines'
 
 export const App = () => {
     return (
-        <section>
-            <BrowserRouter>
-                <Navigation />
+        <BrowserRouter>
+            <Navigation />
+            <HeroSection />
 
-                <div className='max-w-content m-auto grid grid-cols-[auto_1fr_auto] px-10'>
-                    <div className='lines-svg-column w-10 h-full bg-[url("/Lines.svg")] bg-[length:60px_60px] border-x border-br2'></div>
-                    
-                    <div className='max-w-content grid p-20'>
-                        <Routes>
-                            <Route path='/about' element={<About />}></Route>
-                        </Routes>
-                        <Footer />
-                    </div>
+            <Routes>
+                <Route path='/' element={
+                    <GridLines>
+                        <HomePage />
+                    </GridLines>
+                }></Route>
+            </Routes>
 
-                    <div className='lines-svg-column w-10 h-full bg-[url("/Lines.svg")] bg-[length:60px_60px] border-x border-br2'></div>
-                </div>
-
-            </BrowserRouter>
-        </section>
+            <Footer />
+        </BrowserRouter>
     )
 }
