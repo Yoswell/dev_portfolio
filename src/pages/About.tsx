@@ -1,4 +1,4 @@
-import { HashTag } from '@/components/HashTag'
+/*import { HashTag } from '@/components/HashTag'
 import { TitleTag } from '@/components/TitleTag'
 import { useEffect, useState } from 'react'
 
@@ -189,4 +189,4 @@ export const About = () => (
         <hr />
     </div>
 )
-
+*/

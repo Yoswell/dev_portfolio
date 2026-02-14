@@ -4,7 +4,6 @@ import { Fireflies } from "@/components/utils/Fireflies"
 import Grainient from "@/components/utils/Grainient"
 import ShinyText from "@/components/utils/ShinyText"
 import { TitleGradientCard } from "@/components/utils/TitleGradientCard"
-import { TitleSection } from "@/components/utils/TitleSection"
 import { DEV_SKILLS } from "@/constants/DevSkills"
 import { EXPERTISE_LIST } from "@/constants/ExpertiseLists"
 import { Link } from "react-router-dom"
@@ -323,7 +322,7 @@ const ExpertiseSection = () => (
         </div>
     </section>
 )
-
+/*
 const RecentBlogPostSection = () => (
     <section>
         <div className="grid place-content-center place-items-center gap-2 p-6 md:p-10">
@@ -347,7 +346,7 @@ const RecentBlogPostSection = () => (
             </div>
         </div>
     </section>
-)
+)*/
 
 const BannerFooterX = () => (
     <section>
