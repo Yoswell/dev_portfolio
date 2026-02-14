@@ -1,4 +1,3 @@
-import { Globe } from "@/components/ui/globe"
 import { Fireflies } from "@/components/utils/Fireflies"
 import { TitleGradientCard } from "../utils/TitleGradientCard"
 
@@ -42,7 +41,7 @@ export const AboutMe = () => (
                     titleColor="text-gradient-blue-b"
                 />
             </div>
-            <Globe className="top-28" />
+            
 
         </div>
     </section>
