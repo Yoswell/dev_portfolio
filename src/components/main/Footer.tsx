@@ -21,9 +21,8 @@ const SOCIAL_LINKS = [
     { href: 'https://discord.com', text: 'Discord' }
 ]
 
-const AnchorLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+const AnchorLink = ({ href, children }: { href: string; children: React.ReactNode }) =>
     <a href={href} target='_blank' rel='noopener noreferrer'>{children}</a>
-)
 
 const GridSectionLinks = ({ titleSection, children }: { titleSection: string; children: React.ReactNode[] }) => (
     <div className='flex flex-col items-start gap-3'>
@@ -32,18 +31,15 @@ const GridSectionLinks = ({ titleSection, children }: { titleSection: string; ch
     </div>
 )
 
-// === MAIN ===
 export function Footer() {
     return (
-        <footer className='max-w-content m-auto grid border-t border-x border-br2'>
+        <footer className='max-w-7xl m-auto grid border-t border-x border-br2'>
             <div className='grid grid-cols-[auto_1fr]'>
                 <div className='flex flex-col items-start gap-4 border-r border-br2 p-4 md:p-6'>
-                    <span>
-                        <i className='fa-brands fa-flutter text-fg0 text-xl -rotate-90'></i>
-                    </span>
+                    <i className='fa-brands fa-flutter text-fg0 text-xl -rotate-90'></i>
                     <p className='max-w-[30ch] text-fg2'>Full-Stack and Penetration Tester specializing in building robust, secure, and high-performance web applications from concept to deployment.</p>
                 </div>
-                <div className='grid grid-cols-3 gap-4 p-4 md:p-6'>
+                <div className='grid grid-cols-3 gap-4 md:p-6 p-4'>
                     <GridSectionLinks titleSection='General Pages'>
                         {GENERAL_LINKS.map((l, i) => (
                             <Link key={`g-${i}`} to={l.to}>{l.text}</Link>
@@ -54,7 +50,7 @@ export function Footer() {
                         {PROJECT_LINKS.map((l, i) => (
                             <Link key={`p-${i}`} to={l.to}>{l.text}</Link>
                         ))}
-                        </GridSectionLinks>
+                    </GridSectionLinks>
 
                     <GridSectionLinks titleSection='Social Medias'>
                         {SOCIAL_LINKS.map((l, i) => (
@@ -66,7 +62,7 @@ export function Footer() {
 
             <div className='flex items-center justify-center gap-1 border-t border-br2 p-4'>
                 <span className='text-fg3 text-sm'>Built with curiosity by</span>
-                <a href='#' className='text-sky-300 text-sm'>@yosswb</a>
+                <a href='#' className='text-sky-300 text-sm'>@me</a>
             </div>
 
             <div className='hr-full' />

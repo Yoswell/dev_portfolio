@@ -35,7 +35,7 @@
 
     /* Shadow for cards */
     .shadow-card {
-        box-shadow: inset 0 -8px 30px var(--bg2-color);
+        box-shadow: inset 0 -8px 20px var(--bg2-color);
     }
 
     /* Left and right columns lines to scoped the main content */
@@ -46,8 +46,8 @@
 
     /* Bottom mask for all cards */
     .mask-b {
-        -webkit-mask-image: linear-gradient(to bottom, var(--bg0-color) 85%, transparent);
-        mask-image: linear-gradient(to bottom, var(--bg0-color) 85%, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, var(--bg0-color) 80%, transparent);
+        mask-image: linear-gradient(to bottom, var(--bg0-color) 80%, transparent);
     }
 
     .mask-b-before::before {
